@@ -7,6 +7,7 @@ const { Category, Product } = require('../../models');
 router.get('/', async (req, res) => {
   try {
     const categories = await Category.findAll({
+      attributes: ['id', 'category_name'],
       include: [{ 
         model: Product,
         attributes: ['id', 'product_name', 'price', 'stock', 'category_id']
@@ -61,7 +62,7 @@ router.put('/:id', async (req, res) => {
       res.status(404).json({ message: 'No category found with this id!' });
       return;
     }
-    res.status(200).json(oneCategory);
+    res.status(200).json(updateCategory);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -70,9 +71,11 @@ router.put('/:id', async (req, res) => {
 // Delete a category by its 'id' value
 router.delete('/:id', async (req, res) => {
   try {
-    const deleteCategory = await Category.delete(
+    const deleteCategory = await Category.destroy(
       { 
-        where: { id: req.params.id } 
+        where: { 
+          id: req.params.id 
+        } 
       });
     if (!deleteCategory) {
       res.status(404).json({ message: 'No category found with this id!' });
