@@ -40,7 +40,7 @@ router.get('/:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
- // Create a new tag
+// Create a new tag
 router.post('/', async (req, res) => {
   try {
   const tagCreate = await Tag.create({
@@ -54,7 +54,10 @@ router.post('/', async (req, res) => {
 // Update a tag's name by its 'id' value
 router.put('/:id', async (req, res) => {
   try {
-    const updateTag = await Tag.update(req.body, {
+    const updateTag = await Tag.update({
+			tag_name: req.body.tag_name,
+		}, 
+    {
       where: { 
         id: req.params.id 
       }, 
@@ -63,7 +66,7 @@ router.put('/:id', async (req, res) => {
       res.status(404).json({ message: 'No tag found with this id!' });
       return;
     }
-    res.status(200).json(updateTag);
+    res.status(200).json({ message: 'Tag updated!' });
   } catch (err) {
     res.status(500).json(err);
   }
