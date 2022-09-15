@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
       }],
     });
     if (!categories) {
-      res.status(404).json({ message: 'No categories found! with this id!' });
+      res.status(404).json({ message: 'No categories found!' });
       return;
     }
     res.status(200).json(categories);
@@ -41,15 +41,17 @@ router.get('/:id', async (req, res) => {
   }
 });
 // Create a new category
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
   try {
-    Category.create({
-      category_name: req.params.category_name,
+   const categoryCreate = await Category.create({
+      category_name: req.body.category_name,
     })
+    res.status(200).json(categoryCreate);
   } catch (err) {
     res.status(500).json(err);
   }
 });
+
 // Update a category by its 'id' value
 router.put('/:id', async (req, res) => {
   try {
@@ -81,7 +83,7 @@ router.delete('/:id', async (req, res) => {
       res.status(404).json({ message: 'No category found with this id!' });
       return;
     }
-    res.status(200).json(deleteCategory);
+    res.status(200).json({ message: 'Category deleted!' });
   } catch (err) {
     res.status(500).json(err);
   }
