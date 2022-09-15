@@ -6,10 +6,10 @@
 
 A MySQL database and application backend for an e-commerce site, where users are able to interact and manipulate data: they can create, update, delete or view desired products, tags and categories. Powered with MySQL2, Express, Sequelize and Dotenv.
 
-![Demo](./assets/images/SS%20Demo.png)
+![Demo](./images/SS%20DEMO.png)
 
-## [Demo Video](./assets/images/Readme%20Generator%20Demo.mp4)
-[Link to video](https://drive.google.com/file/d/1nj4svth5h1QONIEZ5B7Yi7TDmiZfoTBo/view) 
+## [Demo Video](./images/E-commerce%20Backend%20Demo.webm)
+[Link to video](https://drive.google.com/file/d/1Ugx_dwyFLo2oPddwA3K-xrsiCfVOeaiy/view) 
 
 ## Table of Contents
 * [Description](#description)
