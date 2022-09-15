@@ -81,7 +81,7 @@ This application was built with:
 
 ## [Questions](#table-of-contents)
 
-Please contact me using the following links:
+Please feel free to contact me using the following links:
 * [GitHub: jcuetos97](https://github.com/jcuetos97)
 * [Email: jcuetos97@gmail.com](mailto:jcuetos97@gmail.com)
 * [LinkedIn: jcuetos97](https://www.linkedin.com/in/jcuetos97/)
