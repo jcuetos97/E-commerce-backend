@@ -57,10 +57,7 @@ After installation is complete and .env file created in root directory, complete
 Now you're ready to start the application! You can start the server by running: 
 ```
 npm start
-
 ```
-
-The server is running, now you can make requests to it through your desired method. 
 
 ---
 
